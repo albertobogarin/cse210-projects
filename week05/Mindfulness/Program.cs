@@ -1,9 +1,12 @@
 using System;
 
-class Program
+namespace Mindfulness
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello World! This is the Mindfulness Project.");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Mindfulness Program - Stubs Created");
+        }
     }
 }
