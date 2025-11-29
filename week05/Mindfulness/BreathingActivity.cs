@@ -4,32 +4,33 @@ namespace Mindfulness
 {
     public class BreathingActivity : Activity
     {
-        public BreathingActivity(string name, string description)
-            : base(name, description)
+        public BreathingActivity() : base("Breathing Activity",
+            "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.")
         {
         }
 
         public void Run()
         {
-            
             DisplayStartingMessage();
 
-            
-            for (int i = 0; i < 3; i++)
+            // alternate breathe in/out until duration is reached
+            DateTime endTime = DateTime.Now.AddSeconds(_duration);
+            while (DateTime.Now < endTime)
             {
                 Console.WriteLine();
                 Console.WriteLine("Breathe in...");
-                
-                ShowSpinner(4);
+                ShowCountDown(4);
 
                 Console.WriteLine("Breathe out...");
-                
-                ShowSpinner(6);
+                ShowCountDown(6);
+
+                // small pause between cycles
+                ShowSpinner(1);
             }
 
-        
             DisplayEndingMessage();
         }
     }
 }
+
 
