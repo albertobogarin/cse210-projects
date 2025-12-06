@@ -1,3 +1,5 @@
+using System;
+
 public abstract class Goal
 {
     protected string _shortName;
@@ -11,11 +13,17 @@ public abstract class Goal
         _points = points;
     }
 
-    public abstract int RecordEvent();
-    public abstract bool IsComplete();
+    public string GetName() => _shortName;
+    public int GetPoints() => _points;
+
     public virtual string GetDetailsString()
     {
-        return $"{_shortName} ({_description})";
+        return $"{_shortName}: {_description}";
     }
+
+    
+    public abstract int RecordEvent();
+
     public abstract string GetStringRepresentation();
 }
+
